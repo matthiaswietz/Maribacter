@@ -22,5 +22,5 @@ For this, we define three groups in a file Strain_list.txt:
 - Maribacter_count: Group2 and Group3 (9 strains)
 - Zobellia_count: Outgroup (8 strains)
 
-Then execute: 
+Then execute:   
 Pangenome.sh ./Maribacter/Strain_list.txt ./Maribacter/Results/Orthogroups/Orthogroups_2.txt
