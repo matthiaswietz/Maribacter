@@ -483,6 +483,3 @@ theme(strip.background = element_blank(),
       panel.grid.minor = element_blank())
 
 ######################################################
-
-sessionInfo()
-save.image("Maribacter_62-1.Rdata")
