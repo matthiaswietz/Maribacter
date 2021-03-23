@@ -1,1 +1,1 @@
-data/Maribacter_62-1.faa
+Input files for OrthoFinder
