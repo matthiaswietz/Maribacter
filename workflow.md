@@ -1,14 +1,14 @@
 ## PANGENOME ANALYSIS 
 
-We use protein-fasta files (faa--translated cds) from [23 strains](./data/pangenome_faa)
+- We use protein-fasta files (faa--translated cds) from [23 strains](./data/pangenome_faa)
 
-For processing, transfer these to a folder "Maribacter" inside your Linux working directory.  
+- For processing, transfer these to a folder "Maribacter" inside your Linux working directory.  
 
-Then run OrthoFinder v2.3.3 as follows:  
+- Then run OrthoFinder v2.3.3 as follows:  
 
 OrthoFinder-2.3.3/orthofinder -o ~/Maribacter/results -f ~/Maribacter/ -M msa -t 17
 
-The resulting file ./Results/Orthogroups.txt, is then modified as follows:
+- The resulting file ./Results/Orthogroups.txt, is then modified as follows:
 
 grep "OG*" Orthogroups.txt | sed 's/://' > Orthogroups_2.txt
 
