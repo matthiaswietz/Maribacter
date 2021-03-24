@@ -1,6 +1,8 @@
 ####################################################
 # Script extracts gene families according to user-defined groups
 # Strain groups are provided in a strain list file
+# DIfferent combiniations of strains are tested
+# The paper reports results from "GroupA"
 # 
 # Input: 1. Strain list file 2. OrthoFinder Output
 # Output: Distribution of gene families in core & pangenome.
