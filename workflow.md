@@ -1,8 +1,8 @@
-## CAZYME & GROWTH DATA
+## CAZyme & growth data
 
 Analyses and figures from the paper can be reproduced using this [Rscript](./code/Maribacter.R) and [input files](./data/Rstats) 
 
-## PANGENOME ANALYSIS 
+## Pangenome analysis
 
 - We use protein-fasta files (faa--translated cds) from [23 strains](./data/pangenome_faa)
 
