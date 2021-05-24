@@ -1,10 +1,6 @@
-####################################################
-# Script extracts gene families according to user-defined groups
-# Strain groups are provided in a strain list file
-# DIfferent combiniations of strains are tested
-# The paper reports results from "GroupA"
-# 
-# Input: 1. Strain list file 2. OrthoFinder Output
+########################################################################################################
+# Script extracts gene families according to user-defined groups (See Strain_list.txt)
+# Input: 1. Strain_list.txt 2. Orthogroups_2.txt 
 # Output: Distribution of gene families in core & pangenome.
 ####################################################
 use warnings;
@@ -12,10 +8,10 @@ use warnings;
 use strict;
 
 
-my $usage = "\nInsufficient command line arguments provided.\nUSAGE: $0 \n 1. strain list\n 2.  mclOutput\n\n";
+my $usage = "\nInsufficient command line arguments provided.\nUSAGE: $0 \n 1. strainlist\n 2.  Orthogroups\n\n";
 
 my $strainlist = shift(@ARGV) or die ($usage);
-my $mcloutput = shift(@ARGV) or die ($usage);
+my $Orthogroups = shift(@ARGV) or die ($usage);
 
 my $Maribacter_621_count = 0;
 my $Maribacter_count = 0;
@@ -69,23 +65,23 @@ while (<LIST>){
 	
 	@line_array = split('\t',$_);
 	
-	if ($line_array[5] eq "1"){
+	if ($line_array[2] eq "1"){
 
 		$Maribacter_621{$line_array[1]} = "yep";
 	}
 	
-	if ($line_array[5] eq "2"){
+	if ($line_array[2] eq "2"){
 
 		$Maribacter{$line_array[1]} = "yep";
 	}
 	
-	if ($line_array[5] eq "3"){
+	if ($line_array[2] eq "3"){
 
 		$Zobellia{$line_array[1]} = "yep";
 	}
 }
 
-open(MCL,'<'.$mcloutput);
+open(OG,'<'.$Orthogroups);
 
 open(panAll,'>All_pan_genes.txt');
 open(coreAll,'>All_core_genes.txt');
@@ -112,7 +108,7 @@ open(coreMaribacter621Zobellia,'>Maribacter621Zobellia_core_genes.txt');
 #store all genes in a hash with their corresponding gene family assignment
 
 
-while (<MCL>){
+while (<OG>){
 	
 	
 		
@@ -129,7 +125,7 @@ while (<MCL>){
     	if (exists $Maribacter_621{$strain}){
 
     		unless (exists $paralogCheck{$strain}){
-  				if ($line_array[0] =~ /OG0001717/)
+  				if ($line_array[0] =~ /OG0001717/) # enter random single-copy OG number here
 		    	{
 		    	print "Maribacter_621: $strain\n";
 				}
@@ -139,7 +135,7 @@ while (<MCL>){
          }
     	elsif (exists $Maribacter{$strain}){
     		unless (exists $paralogCheck{$strain}){
-				if ($line_array[0] =~ /OG0001717/)
+				if ($line_array[0] =~ /OG0001717/) # enter random single-copy OG number here
 		    	{
 		    	print "Maribacter: $strain\n";
 				}
@@ -151,7 +147,7 @@ while (<MCL>){
 
     		unless (exists $paralogCheck{$strain}){
 		    	
-		    	if ($line_array[0] =~ /OG0001717/)
+		    	if ($line_array[0] =~ /OG0001717/) # enter random single-copy OG number here
 		    	{
 		    	print "Zobellia: $strain\n";
 				}
@@ -287,26 +283,4 @@ Zobellia pan genes: $panZobellia
 MaribacterAll pan genes: $panMaribacterAll
 MaribacterZobellia pan genes: $panMaribacterZobellia
 Maribacter621Zobellia pan genes: $panMaribacter621Zobellia
-#############################################################################
-
-
-To merge the outcome _genes.txt with the Kegg annotation list derived from KAAS output:
-
-for i in $(ls -1 *_genes.txt)
-do
-awk '$0=$2 "\t" $1' ${i} > ${i}_LocusTag.txt
-done
-
-
-rename _genes.txt_LocusTag.txt _LocusTag.txt *
-
-tr -d '\r' < ~/Maribacter_Matti/AllGenes_KEGG_Anno.txt > ~/Maribacter_Matti/AllGenes_KEGG_Anno2.txt
-
-for i in $(ls -1 *_LocusTag.txt)
-do
-join -a 1 -1 1 -2 1 -t $'\t' <(sort ${i}) <(sort ~/Maribacter/AllGenes_KEGG_Anno2.txt) > ${i}_Anno.txt
-done
-
-
-rename _LocusTag.txt_Anno.txt _Anno.txt *
-
+#################################################################################################################################
