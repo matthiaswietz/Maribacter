@@ -14,7 +14,7 @@ Analyses and figures from the paper can be reproduced using this [Rscript](./cod
 
 - The output file `Orthogroups.txt` is then modified as follows:
 
-`cd ~/Maribacter/results/Results/Orthogroups` 
+`cd ~/Maribacter/results/Results/Orthogroups`  
 `grep "OG*" Orthogroups.txt | sed 's/://' > Orthogroups_2.txt`
 
 ####################################################
