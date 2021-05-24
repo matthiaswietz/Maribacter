@@ -20,9 +20,9 @@ Analyses and figures from the paper can be reproduced using this [Rscript](./cod
 ####################################################
 
 To derive core / pan genes, run this [perl script](./code/Pangenome.sh) from your working directory    
-(modified from https://zenodo.org/record/1010076/files/PanGenome_analysis_host_specific.tar.gz available at https://zenodo.org/record/1010076#.YFKs_q_7Q2z)
+(original script available from https://zenodo.org/record/1010076/files/PanGenome_analysis_host_specific.tar.gz)
 
-For this, we define three groups in [this file](./data/Strain_list.txt):
+We define three groups in [this file](./data/Strain_list.txt):
 - Maribacter_621: Group1 (6 strains)
 - Maribacter_count: Group2 (9 strains)
 - Zobellia_count: Group3 (8 strains)
