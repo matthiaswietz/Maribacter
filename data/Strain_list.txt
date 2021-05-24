@@ -1,0 +1,24 @@
+Strain	LocusTag	Group
+Maribacter 62-1	MAR621	1
+Maribacter dokdonensis DSW-8	I600	1
+Maribacter dokdonensis MAR_2009_60	SAMN05192545	1
+Maribacter dokdonensis MAR_2009_71	SAMN05192540	1
+Maribacter litoralis SDRB-Phe2	DCS95	1
+Maribacter_2014MBL_MicDiv	YQ22	1
+Maribacter aquivivus DSM16478	SAMN04488007	2
+Maribacter caenipelagi CECT8455	DFQ03	2
+Maribacter forsetii DSM18668	P177	2
+Maribacter Hel_I_7	P178	2
+Maribacter sedimenticola DSM19840	SAMN04488009	2
+Maribacter sp. MAR_2009_72	JM81	2
+Maribacter stanieri DSM19891	SAMN04488010	2
+Maribacter thermophilus HT7-2	AB657	2
+Maribacter ulvicola DSM15366	SAMN05421797	2
+Arenibacter aquaticus GUO	EHW67	3
+Muricauda alvinocardis SCR12	EZV76	3
+Pricia antarctica DSM23421	SAMN05421636	3
+Pseudozobellia thermophila DSM19858	SAMN04488513	3
+Zobellia amurskyensis KMM3526	D9O36	3
+Zobellia galactanivorans DsiJ	ZOBELLIA	3
+Zobellia uliginosa DSM2061	SAMN05421766	3
+Zobellia uliginosa MAR_2009_138	FG20	3
