@@ -39,10 +39,11 @@ Analyses and figures from the paper can be reproduced using this [Rscript](./cod
 `grep "OG*" Orthogroups_UnassignedGenes.tsv | sed 's/\t\+/\t/g' | sed '1d' > Orthogroups_UnassignedGenes_LocusTag.txt`
 
 - Unique genes are derived from `Orthogroups.GeneCount.tsv` by executing  
-`head -1 Orthogroups.GeneCount.tsv | sed 's/[^\t]//g' | wc -c`
-`for i in {2.."n-1"}
-do
-awk -v i="$i" '$i== $"n" { print $0}' Orthogroups.GeneCount.tsv >> UniqueOrthogroups.tsv
-done
+  `head -1 Orthogroups.GeneCount.tsv | sed 's/[^\t]//g' | wc -c`  
+  
+  `for i in {2.."n-1"}
+  do  
+  awk -v i="$i" '$i== $"n" { print $0}' Orthogroups.GeneCount.tsv >> UniqueOrthogroups.tsv  
+  done`
 
 The output is then combined in Rstudio with dbCAN2 or KEGG/KAAS assignments by merging with the locus_tag.
